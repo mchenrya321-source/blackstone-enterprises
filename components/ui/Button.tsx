@@ -20,7 +20,7 @@ const variants = {
 
 const sizes = {
   default: "px-7 py-3 text-sm font-bold uppercase tracking-widest",
-  large: "px-9 py-4 text-base font-bold uppercase tracking-widest sm:text-lg",
+  large: "px-7 py-3 text-sm font-bold uppercase tracking-widest md:px-9 md:py-4 md:text-lg",
 };
 
 export function Button({

@@ -21,31 +21,31 @@ export function Services() {
           </AnimatedItem>
         </AnimatedGroup>
 
-        <AnimatedGroup className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <AnimatedGroup className="grid gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
           {SERVICES.map((service) => (
             <AnimatedItem key={service.title}>
               <motion.article
                 whileHover={{ y: -6 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
-                className="group overflow-hidden bg-charcoal-900"
+                className="group flex h-full flex-col overflow-hidden bg-charcoal-900"
               >
-                <div className="relative h-52 overflow-hidden sm:h-56">
+                <div className="relative h-[136px] shrink-0 overflow-hidden md:h-56">
                   <Image
                     src={service.image}
                     alt={service.imageAlt}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     quality={85}
                     loading="lazy"
                     className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900 via-charcoal-900/30 to-transparent" />
                 </div>
-                <div className="p-6 sm:p-7">
-                  <h3 className="font-display text-2xl font-bold uppercase tracking-tight text-white">
+                <div className="flex flex-1 flex-col p-4 md:p-7">
+                  <h3 className="font-display text-xl font-bold uppercase tracking-tight text-white md:text-2xl">
                     {service.title}
                   </h3>
-                  <p className="mt-3 text-base leading-relaxed text-white/55">
+                  <p className="mt-2 line-clamp-3 text-sm leading-snug text-white/55 md:mt-3 md:line-clamp-none md:text-base md:leading-relaxed">
                     {service.description}
                   </p>
                 </div>

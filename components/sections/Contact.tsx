@@ -86,7 +86,7 @@ export function Contact() {
           </AnimatedItem>
         </AnimatedGroup>
 
-        <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-5 lg:gap-16">
+        <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2 md:gap-12 lg:grid-cols-5 lg:gap-16">
           <AnimatedGroup className="lg:col-span-2">
             <AnimatedItem>
               <div>
@@ -95,15 +95,15 @@ export function Contact() {
                 </p>
                 <a
                   href={SITE.phoneHref}
-                  className="mt-4 block font-display text-4xl font-bold tracking-tight text-white transition-colors hover:text-brand-orange sm:text-5xl"
+                  className="mt-3 block font-display text-3xl font-bold tracking-tight text-white transition-colors hover:text-brand-orange md:mt-4 md:text-5xl"
                 >
                   {SITE.phone}
                 </a>
-                <p className="mt-5 text-base leading-relaxed text-white/55">
+                <p className="mt-3 text-sm leading-relaxed text-white/55 md:mt-5 md:text-base">
                   Available for emergency and scheduled service across Northeast
                   Louisiana.
                 </p>
-                <div className="mt-8">
+                <div className="mt-5 md:mt-8">
                   <Button href={SITE.phoneHref} variant="primary" size="large">
                     Call Now
                   </Button>
@@ -114,8 +114,8 @@ export function Contact() {
 
           <AnimatedGroup className="lg:col-span-3">
             <AnimatedItem>
-              <motion.form onSubmit={handleSubmit} className="space-y-5">
-                <div className="grid gap-5 sm:grid-cols-2">
+              <motion.form onSubmit={handleSubmit} className="space-y-3 md:space-y-5">
+                <div className="grid gap-3 md:grid-cols-2 md:gap-5">
                   <Field label="Name" htmlFor="name" required>
                     <input
                       id="name"
@@ -142,7 +142,7 @@ export function Contact() {
                     />
                   </Field>
 
-                  <Field label="Email" htmlFor="email" className="sm:col-span-2">
+                  <Field label="Email" htmlFor="email" className="md:col-span-2">
                     <input
                       id="email"
                       name="email"
@@ -157,7 +157,7 @@ export function Contact() {
                   <Field
                     label="Service Needed"
                     htmlFor="service"
-                    className="sm:col-span-2"
+                    className="md:col-span-2"
                     required
                   >
                     <select
@@ -182,25 +182,25 @@ export function Contact() {
                   <Field
                     label="Message"
                     htmlFor="message"
-                    className="sm:col-span-2"
+                    className="md:col-span-2"
                   >
                     <textarea
                       id="message"
                       name="message"
-                      rows={4}
+                      rows={3}
                       value={form.message}
                       onChange={handleChange}
-                      className={cn(inputClass, "resize-none")}
+                      className={cn(inputClass, "resize-none md:min-h-[7.5rem]")}
                       placeholder="Tell us about your equipment and what you need..."
                     />
                   </Field>
                 </div>
 
-                <div className="flex flex-col gap-4 pt-2 sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex flex-col gap-3 pt-1 md:flex-row md:items-center md:justify-between md:gap-4 md:pt-2">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="inline-flex items-center justify-center bg-brand-orange px-9 py-4 text-base font-bold uppercase tracking-widest text-black transition-all hover:bg-brand-orange-light disabled:cursor-not-allowed disabled:opacity-60"
+                    className="inline-flex items-center justify-center bg-brand-orange px-7 py-3 text-sm font-bold uppercase tracking-widest text-black transition-all hover:bg-brand-orange-light disabled:cursor-not-allowed disabled:opacity-60 md:px-9 md:py-4 md:text-base"
                   >
                     {isSubmitting ? "Sending..." : "Submit Request"}
                   </button>
@@ -226,7 +226,7 @@ export function Contact() {
 }
 
 const inputClass =
-  "w-full bg-charcoal-900 px-4 py-3.5 text-white placeholder:text-white/30 transition-colors focus:border-brand-orange focus:outline-none focus:ring-1 focus:ring-brand-orange/40";
+  "w-full bg-charcoal-900 px-4 py-2.5 text-white placeholder:text-white/30 transition-colors focus:border-brand-orange focus:outline-none focus:ring-1 focus:ring-brand-orange/40 md:py-3.5";
 
 function Field({
   label,
@@ -245,7 +245,7 @@ function Field({
     <div className={className}>
       <label
         htmlFor={htmlFor}
-        className="mb-2 block text-xs font-bold uppercase tracking-widest text-white/60"
+        className="mb-1.5 block text-xs font-bold uppercase tracking-widest text-white/60 md:mb-2"
       >
         {label}
         {required && <span className="text-brand-orange"> *</span>}

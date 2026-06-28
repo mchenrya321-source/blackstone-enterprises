@@ -7,7 +7,6 @@ import { Services } from "@/components/sections/Services";
 import { WhyChoose } from "@/components/sections/WhyChoose";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
-import { MobileCallBar } from "@/components/layout/MobileCallBar";
 
 export default function Home() {
   return (
@@ -23,7 +22,6 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
-      <MobileCallBar />
     </>
   );
 }

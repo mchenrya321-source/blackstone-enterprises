@@ -29,7 +29,7 @@ export function Gallery() {
 
         <AnimatedGroup>
           <AnimatedItem>
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-5 lg:grid-cols-3">
               {GALLERY_IMAGES.map((image, index) => (
                 <motion.button
                   key={image.id}
@@ -37,7 +37,7 @@ export function Gallery() {
                   whileHover={{ y: -4 }}
                   transition={{ duration: 0.3 }}
                   onClick={() => setLightboxIndex(index)}
-                  className="group relative h-56 overflow-hidden rounded-lg shadow-premium focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange sm:h-64"
+                  className="group relative h-40 overflow-hidden rounded-lg shadow-premium focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange md:h-64"
                   aria-label={`View photo: ${image.caption}`}
                 >
                   <Image
